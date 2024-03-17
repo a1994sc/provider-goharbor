@@ -13,7 +13,7 @@ import (
 
 // Package type metadata.
 const (
-	Group   = "template.upbound.io"
+	Group   = "goharbor.adrp.xyz"
 	Version = "v1alpha1"
 )
 

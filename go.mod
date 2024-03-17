@@ -1,4 +1,4 @@
-module github.com/upbound/upjet-provider-template
+module github.com/a1994sc/provider-goharbor
 
 go 1.19
 
