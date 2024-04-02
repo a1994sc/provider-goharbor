@@ -1,0 +1,33 @@
+apiVersion: config.adrp.xyz/v1alpha1
+kind: Account
+metadata:
+  annotations:
+    meta.upbound.io/example-id: config/v1alpha1/account
+  labels:
+    testing.upbound.io/example-name: system
+  name: system
+spec:
+  forProvider:
+    description: system level robot account
+    level: system
+    name: example-system
+    permissions:
+    - access:
+      - action: create
+        resource: labels
+      kind: system
+      namespace: /
+    - access:
+      - action: push
+        resource: repository
+      kind: project
+      namespace: ${harbor_project.main.name}
+    - access:
+      - action: pull
+        resource: repository
+      kind: project
+      namespace: '*'
+    secretSecretRef:
+      key: attribute.password.result
+      name: example-
+      namespace: upbound-system

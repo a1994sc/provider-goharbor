@@ -10,7 +10,8 @@ import (
 
 	ujconfig "github.com/crossplane/upjet/pkg/config"
 
-	"github.com/a1994sc/provider-goharbor/config/null"
+	"github.com/a1994sc/provider-goharbor/config/account"
+	"github.com/a1994sc/provider-goharbor/config/config"
 )
 
 const (
@@ -36,7 +37,8 @@ func GetProvider() *ujconfig.Provider {
 
 	for _, configure := range []func(provider *ujconfig.Provider){
 		// add custom config functions
-		null.Configure,
+		account.Configure,
+		config.Configure,
 	} {
 		configure(pc)
 	}
